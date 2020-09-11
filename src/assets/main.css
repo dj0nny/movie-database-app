@@ -17,3 +17,20 @@
 body {
   background-color: var(--primary-bg-color);
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 10px 0px;
+  background-color: var(--secondary-bg-color);
+  color: #fff;
+}
+
+.header div {
+  flex: 1;
+}
+
+.header__logo {
+  font-size: 20px;
+}
