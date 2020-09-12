@@ -1,31 +1,27 @@
 <template>
-  <div class="home">
-    <MovieList :list="movies" />
+  <div class="movieDetails">
+
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex';
 
-import MovieList from '../components/MovieList.vue';
-
 export default {
-  name: 'Home',
-  components: {
-    MovieList,
-  },
+  name: 'MovieDetails',
   computed: {
     ...mapState('movies', [
-      'movies',
+      'movie',
     ]),
   },
   methods: {
     ...mapActions('movies', [
-      'getMovies',
+      'getMovieDetails',
     ]),
   },
-  mounted() {
-    this.getMovies();
+  async mounted() {
+    const { id } = this.$route.params;
+    this.getMovieDetails(id);
   },
 };
 </script>
