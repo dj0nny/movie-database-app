@@ -1,6 +1,21 @@
 <template>
-  <div class="movieDetails">
-
+  <div class="movieDetails" v-if="!isLoading">
+    <div class="movieDetails__poster" v-if="movie.poster_path">
+      <img :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path" />
+    </div>
+    <div class="movieDetails__info">
+      <h2>Details</h2>
+      <div class="detail">
+        <span>Title:</span> {{movie.original_title}}
+      </div>
+      <div class="detail">
+        <span>Original language:</span> {{movie.original_language}}
+      </div>
+      <div class="detail">
+        <span>Overview:</span> {{movie.overview}}
+      </div>
+      <!-- {{movie}} -->
+    </div>
   </div>
 </template>
 
@@ -12,6 +27,7 @@ export default {
   computed: {
     ...mapState('movies', [
       'movie',
+      'isLoading',
     ]),
   },
   methods: {

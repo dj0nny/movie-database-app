@@ -18,7 +18,7 @@ export default {
     async getMovieDetails({ state }, movieId) {
       state.isLoading = true;
       const res = await API.get(`movie/${movieId}?api_key=${process.env.VUE_APP_API_KEY}`);
-      console.log(res.data);
+      state.movie = res.data;
       state.isLoading = false;
     },
   },

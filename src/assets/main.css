@@ -49,3 +49,26 @@ body {
   padding: 10px;
   text-align: center;
 }
+
+.movieDetails {
+  max-width: 1250px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.movieDetails > div {
+  flex: .5;
+}
+
+.movieDetails__poster {
+  text-align: center;
+}
+
+.movieDetails__info .detail {
+    margin: 10px 0;
+}
+
+.movieDetails__info .detail span {
+    font-weight: bold;
+}
