@@ -14,6 +14,12 @@
       <div class="detail">
         <span>Overview:</span> {{movie.overview}}
       </div>
+      <div class="detail">
+        <span>Genres:</span>
+        <div class="genres">
+          <span v-for="genre in movie.genres" :key="genre.id">{{genre.name}} </span>
+        </div>
+      </div>
       <!-- {{movie}} -->
     </div>
   </div>

@@ -69,6 +69,6 @@ body {
     margin: 10px 0;
 }
 
-.movieDetails__info .detail span {
+.movieDetails__info .detail > span {
     font-weight: bold;
 }
