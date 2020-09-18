@@ -35,8 +35,32 @@ body {
   font-size: 20px;
 }
 
+.header__logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .home {
   margin-top: 50px;
+}
+
+button.load-btn {
+  display: block;
+  margin: 0 auto;
+  margin: 20px auto;
+  border: 1px solid var(--secondary-bg-color);
+  background: var(--secondary-bg-color);
+  padding: 10px 20px;
+  width: 200px;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  transition: .3s all;
+}
+
+button.load-btn:hover {
+  background: transparent;
+  color: var(--secondary-bg-color);
 }
 
 .movieList {
@@ -71,4 +95,8 @@ body {
 
 .movieDetails__info .detail > span {
     font-weight: bold;
+}
+
+.movieDetails__info h2 {
+    margin-bottom: 35px;
 }

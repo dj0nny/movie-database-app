@@ -15,9 +15,15 @@
         <span>Overview:</span> {{movie.overview}}
       </div>
       <div class="detail">
+        <span>Release date:</span> {{new Date(movie.release_date).toLocaleDateString()}}
+      </div>
+      <div class="detail">
+        <span>Runtime:</span> {{movie.runtime}} mins
+      </div>
+      <div class="detail">
         <span>Genres:</span>
         <div class="genres">
-          <span v-for="genre in movie.genres" :key="genre.id">{{genre.name}} </span>
+          <span v-for="genre in movie.genres" :key="genre.id">{{genre.name}}, </span>
         </div>
       </div>
       <!-- {{movie}} -->

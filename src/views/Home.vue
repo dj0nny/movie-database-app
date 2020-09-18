@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <MovieList :list="movies" />
+    <button @click="loadMore" class="load-btn">Load more</button>
   </div>
 </template>
 
@@ -22,6 +23,7 @@ export default {
   methods: {
     ...mapActions('movies', [
       'getMovies',
+      'loadMore',
     ]),
   },
   mounted() {
