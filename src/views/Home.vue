@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <MovieList :list="movies" />
+    <img class="home__spinner" src="../assets/loading.svg" v-if="isLoading" />
+    <MovieList :list="movies" v-else />
     <button @click="loadMore" class="load-btn">Load more</button>
   </div>
 </template>
@@ -18,6 +19,7 @@ export default {
   computed: {
     ...mapState('movies', [
       'movies',
+      'isLoading',
     ]),
   },
   methods: {
