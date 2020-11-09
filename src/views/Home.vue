@@ -1,8 +1,21 @@
 <template>
   <div class="home">
     <img class="home__spinner" src="../assets/loading.svg" v-if="isLoading" />
-    <MovieList :list="movies" v-else />
-    <button @click="loadMore" class="load-btn">Load more</button>
+    <div class="home__movieList" v-else>
+      <MovieList :list="movies" />
+      <div class="home__movieList__navs">
+        <div @click="loadPrev" class="navs__before" v-if="page > 1">
+          <button class="button load-btn">
+            &lArr; Prev
+          </button>
+        </div>
+        <div @click="loadNext" class="navs__after">
+          <button class="button load-btn">
+            Succ &rArr;
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,6 +33,7 @@ export default {
     ...mapState('movies', [
       'movies',
       'isLoading',
+      'page',
     ]),
   },
   methods: {
@@ -27,6 +41,16 @@ export default {
       'getMovies',
       'loadMore',
     ]),
+    loadPrev() {
+      const { page } = this;
+      const nextPage = page - 1;
+      this.loadMore(nextPage);
+    },
+    loadNext() {
+      const { page } = this;
+      const prevPage = page + 1;
+      this.loadMore(prevPage);
+    },
   },
   mounted() {
     this.getMovies();

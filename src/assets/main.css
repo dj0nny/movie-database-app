@@ -50,6 +50,24 @@ img.home__spinner {
   width: 100px;
 }
 
+.home__movieList__navs {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  margin: 15px 0;
+}
+
+.home__movieList__navs .navs__before,
+.home__movieList__navs .navs__after {
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.home__movieList__navs .navs__before:hover,
+.home__movieList__navs .navs__after:hover {
+  text-decoration: underline;
+}
+
 button.load-btn {
   display: block;
   margin: 0 auto;

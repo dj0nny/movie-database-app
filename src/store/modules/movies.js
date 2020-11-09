@@ -22,13 +22,12 @@ export default {
       state.movie = res.data;
       state.isLoading = false;
     },
-    async loadMore({ state }) {
+    async loadMore({ state }, page) {
       state.isLoading = true;
-      const movieList = state.movies;
-      state.page += 1;
-      const res = await API.get(`movie/popular?api_key=${process.env.VUE_APP_API_KEY}&page=${state.page}`);
+      state.page = page;
+      const res = await API.get(`movie/popular?api_key=${process.env.VUE_APP_API_KEY}&page=${page}`);
       const { results } = res.data;
-      state.movies = movieList.concat(results);
+      state.movies = results;
       state.isLoading = false;
     },
   },
